@@ -1,0 +1,32 @@
+ul.dessert-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dessert-item {
+  display: flex;
+  flex-direction: column;
+}
+.dessert-image-container {
+  min-width: 20rem;
+}
+.dessert-image {
+  width: fill;
+}
+
+.dessert-category {
+  /* Category text styles */
+}
+
+.dessert-name {
+  /* Name styles */
+}
+
+.dessert-price {
+  /* Price styles */
+}
+
+.add-to-cart {
+  /* Button styles */
+}

@@ -5,14 +5,38 @@ ul.dessert-list {
 }
 
 .dessert-item {
+  width: 20rem;
   display: flex;
   flex-direction: column;
+  margin: 1rem;
 }
+
+/* Mobile styles (below 375px) */
 .dessert-image-container {
-  min-width: 20rem;
+  height: 200px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
+/* Tablet styles (375px to 1439px) */
+/* @media screen and (min-width: 375px) {
+  .dessert-image-container {
+    
+  }
+} */
+
+/* Desktop styles (1440px and above) */
+/* @media screen and (min-width: 1440px) {
+  .dessert-image-container {
+    
+  }
+} */
+
 .dessert-image {
   width: fill;
+  border-radius: 0.5rem;
 }
 
 .dessert-category {

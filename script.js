@@ -9,8 +9,37 @@ const fetchDesserts = async () => {
 const createDessertItem = (dessert, template) => {
   const dessertItem = template.cloneNode(true)
 
-  dessertItem.querySelector('.dessert-image').src = dessert.image.desktop
-  dessertItem.querySelector('.dessert-image').alt = dessert.image.name
+  const imageContainer = dessertItem.querySelector(
+    '.dessert-image-container'
+  )
+
+  const mobileMediaQuery = window.matchMedia('(max-width: 374px)')
+  const desktopMediaQuery = window.matchMedia('(min-width: 1440px)')
+
+  // Function to update background image based on screen size
+  const updateBackgroundImage = () => {
+    if (desktopMediaQuery.matches) {
+      // Desktop: 1440px and above
+      imageContainer.style.backgroundImage = `url(${dessert.image.desktop})`
+    } else if (mobileMediaQuery.matches) {
+      // Mobile: Below 375px
+      imageContainer.style.backgroundImage = `url(${dessert.image.mobile})`
+    } else {
+      // Tablet: Between 375px and 1439px
+      imageContainer.style.backgroundImage = `url(${dessert.image.tablet})`
+    }
+  }
+
+  // Add listeners for screen size changes using modern addEventListener
+  mobileMediaQuery.addEventListener('change', updateBackgroundImage)
+  desktopMediaQuery.addEventListener('change', updateBackgroundImage)
+
+  // Initial check
+  updateBackgroundImage()
+
+  // todo: talk about the  window.matchMedia() and its importance and necessity here ?
+  // imageContainer.style.backgroundImage = `url(${dessert.image.mobile})`
+
   dessertItem.querySelector('.dessert-category').textContent =
     dessert.category
   dessertItem.querySelector('.dessert-name').textContent = dessert.name

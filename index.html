@@ -16,25 +16,42 @@
 
     <title>Frontend Mentor | Product list with cart</title>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>Desserts</h1>
-    <ul class="dessert-list">
-      <!-- This is the template for each dessert item -->
-      <li class="dessert-item">
-        <div class="dessert-image-container"></div>
-        <button class="add-to-cart">Add to Cart</button>
-        <p class="dessert-category"></p>
-        <h3 class="dessert-name"></h3>
-        <p class="dessert-price"></p>
-      </li>
-    </ul>
-
+    <div class="desserts-container">
+      <h1>Desserts</h1>
+      <ul class="dessert-list">
+        <!-- This is the template for each dessert item -->
+        <li class="dessert-item">
+          <div class="dessert-image-container">
+            <button class="add-to-cart">
+              <img
+                src="./assets/images/icon-add-to-cart.svg"
+                alt="add-to-cart"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <div class="dessert-info">
+            <p class="dessert-category"></p>
+            <h3 class="dessert-name"></h3>
+            <p class="dessert-price"></p>
+          </div>
+        </li>
+      </ul>
+    </div>
     <div class="cart">
-      <h2>Your Cart</h2>
-      (<span class="quantity">0</span>)
+      <h2>Your Cart <span>(0)</span></h2>
       <img
         src="./assets/images/illustration-empty-cart.svg"
         alt="illustration empty cart"

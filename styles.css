@@ -1,3 +1,25 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --red: hsl(14, 86%, 42%);
+  --green: hsl(159, 69%, 38%);
+
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+}
+body {
+  display: flex;
+  background-color: var(--rose-100);
+}
+.desserts-container {
+  /* padding: 0; */
+  max-width: 75%;
+  padding: 4rem;
+}
+
 ul.dessert-list {
   list-style: none;
   display: flex;
@@ -13,11 +35,12 @@ ul.dessert-list {
 
 /* Mobile styles (below 375px) */
 .dessert-image-container {
-  height: 200px;
-  width: 100%;
+  height: 17rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border-radius: 0.75rem;
+  position: relative;
 }
 
 /* Tablet styles (375px to 1439px) */
@@ -34,9 +57,26 @@ ul.dessert-list {
   }
 } */
 
-.dessert-image {
-  width: fill;
-  border-radius: 0.5rem;
+button.add-to-cart {
+  font-weight: 600;
+  width: 12rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--white);
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--rose-400);
+  cursor: pointer;
+}
+
+.dessert-info {
+  margin-top: 1.5rem;
 }
 
 .dessert-category {
@@ -50,7 +90,20 @@ ul.dessert-list {
 .dessert-price {
   /* Price styles */
 }
+.cart {
+  background: var(--white);
+  padding: 1rem 1.5rem;
+  margin: 6rem 3rem;
+  height: 19rem;
+  border-radius: 0.5rem;
 
-.add-to-cart {
-  /* Button styles */
+  h2 {
+    color: var(--red);
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 10rem;
+    margin: 1rem 4rem;
+  }
 }
